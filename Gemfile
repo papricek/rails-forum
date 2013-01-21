@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'devise'
 gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'kaminari', '0.13.0'
 
