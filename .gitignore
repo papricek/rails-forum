@@ -1,0 +1,11 @@
+.DS_store
+.idea
+.rvmrc
+.bundle
+
+/config/database.yml
+/db/*.sqlite3
+/log/*.log
+/public/system
+/public/assets
+/tmp
