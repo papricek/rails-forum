@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121094740) do
+ActiveRecord::Schema.define(:version => 20130122150829) do
 
   create_table "forem_categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -124,6 +124,10 @@ ActiveRecord::Schema.define(:version => 20130121094740) do
     t.boolean  "forem_admin",            :default => false
     t.string   "forem_state",            :default => "pending_review"
     t.boolean  "forem_auto_subscribe",   :default => false
+    t.string   "role"
+    t.string   "name"
+    t.string   "url"
+    t.string   "nick"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

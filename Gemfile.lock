@@ -87,6 +87,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
+    mysql2 (0.3.11)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     pygments.rb (0.2.4)
@@ -156,6 +157,7 @@ DEPENDENCIES
   forem!
   jquery-rails
   kaminari (= 0.13.0)
+  mysql2
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   sqlite3
