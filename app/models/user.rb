@@ -1,10 +1,8 @@
-require 'forem/default_permissions'
-
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  include Forem::DefaultPermissions
+  include DefaultPermissions
 
   ROLES = [:member, :moderator, :guest, :administrator]
 

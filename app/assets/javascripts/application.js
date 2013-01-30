@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require highlight.pack
+//= require_self
+
+$(document).ready(function() {
+    $('pre, code').each(function(i, e) {hljs.highlightBlock(e)});
+});
