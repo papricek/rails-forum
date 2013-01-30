@@ -34,7 +34,6 @@ class Topic < ActiveRecord::Base
   validates :subject, :presence => true
 
   before_save :set_first_post_user
-  after_save :approve_user_and_posts, :if => :approved?
   after_create :subscribe_poster
   after_create :skip_pending_review
 
@@ -139,15 +138,9 @@ class Topic < ActiveRecord::Base
   end
 
   def skip_pending_review
-    #if user && user.respond_to?(:forem_needs_moderation?) && user.try(:forem_needs_moderation?)
-    #  update_attribute(:state, 'approved')
-    #end
+    if user.try(:needs_moderation?)
+      update_attribute(:state, 'approved')
+    end
   end
 
-  def approve_user_and_posts
-    return unless state_changed?
-    first_post = posts.by_created_at.first
-    first_post.approve! unless first_post.approved?
-    user.update_attribute(:forem_state, 'approved') if user.forem_state != 'approved'
-  end
 end

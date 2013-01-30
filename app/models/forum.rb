@@ -13,7 +13,7 @@ class Forum < ActiveRecord::Base
   has_many :moderators, :through => :moderator_groups, :source => :group
   has_many :moderator_groups
 
-  validates :category, :name, :description, :presence => true
+  validates :name, :description, :presence => true
 
   attr_accessible :category_id, :title, :name, :description, :moderator_ids
 
