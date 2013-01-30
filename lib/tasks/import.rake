@@ -111,6 +111,7 @@ namespace :db do
     end
     Topic.update_all("state = 'approved'")
     Post.update_all("state = 'approved'")
+    User.update_all("forem_state = 'approved'")
 
   end
 end
