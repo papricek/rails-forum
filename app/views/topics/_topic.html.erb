@@ -6,7 +6,7 @@
     <% if topic.pinned? %>
       <span class='pin icon'></span>
     <% end %>
-    <% if forem_user && view = topic.view_for(forem_user) %>
+    <% if current_user && view = topic.view_for(current_user) %>
       <% if topic.posts.exists?(["created_at > ?", view.updated_at]) %>
         <span class='new_posts icon'>new</span>
       <% end %>
@@ -14,8 +14,8 @@
   </td>
   <td class='byline'>
     <%= new_since_last_view_text(topic) %>
-    <div class='subject'><%= link_to forem_emojify(topic.subject), forem.forum_topic_path(@forum, topic) %></div>
-    <div class='started-by'><%= t "started_by" %><%= relevant_posts(topic).first.user %></div>
+    <div class='subject'><%= link_to forem_emojify(topic.subject), forum_topic_path(@forum, topic) %></div>
+    <div class='started-by'><%= t "started_by" %><%= relevant_posts(topic).first.try(:user).try(:nick) %></div>
   </td>
   <td class='latest-post'>
     <%= link_to_latest_post(topic) -%>

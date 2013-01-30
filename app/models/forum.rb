@@ -35,6 +35,6 @@ class Forum < ActiveRecord::Base
   end
 
   def moderator?(user)
-    user && (user.forem_group_ids & moderator_ids).any?
+    user && (['administrator', 'moderator'].include?(user.role))
   end
 end

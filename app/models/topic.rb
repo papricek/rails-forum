@@ -27,7 +27,7 @@ class Topic < ActiveRecord::Base
   belongs_to :forum
   belongs_to :user
   has_many :subscriptions
-  has_many :posts, :dependent => :destroy, :order => "forem_posts.created_at ASC"
+  has_many :posts, :dependent => :destroy, :order => "posts.created_at ASC"
 
   accepts_nested_attributes_for :posts
 
@@ -44,19 +44,19 @@ class Topic < ActiveRecord::Base
     end
 
     def by_pinned
-      order('forem_topics.pinned DESC').
-          order('forem_topics.id')
+      order('topics.pinned DESC').
+          order('topics.id')
     end
 
     def by_most_recent_post
-      order('forem_topics.last_post_at DESC').
-          order('forem_topics.id')
+      order('topics.last_post_at DESC').
+          order('topics.id')
     end
 
     def by_pinned_or_most_recent_post
-      order('forem_topics.pinned DESC').
-          order('forem_topics.last_post_at DESC').
-          order('forem_topics.id')
+      order('topics.pinned DESC').
+          order('topics.last_post_at DESC').
+          order('topics.id')
     end
 
     def pending_review
@@ -69,8 +69,7 @@ class Topic < ActiveRecord::Base
 
     def approved_or_pending_review_for(user)
       if user
-        where("forem_topics.state = ? OR " +
-                  "(forem_topics.state = ? AND forem_topics.user_id = ?)",
+        where("topics.state = ? OR (topics.state = ? AND topics.user_id = ?)",
               'approved', 'pending_review', user.id)
       else
         approved
@@ -132,7 +131,7 @@ class Topic < ActiveRecord::Base
   end
 
   def last_page
-    (self.posts.count.to_f / Forem.per_page.to_f).ceil
+    (self.posts.count.to_f / 20.to_f).ceil
   end
 
   protected
@@ -147,7 +146,6 @@ class Topic < ActiveRecord::Base
 
   def approve_user_and_posts
     return unless state_changed?
-
     first_post = posts.by_created_at.first
     first_post.approve! unless first_post.approved?
     user.update_attribute(:forem_state, 'approved') if user.forem_state != 'approved'

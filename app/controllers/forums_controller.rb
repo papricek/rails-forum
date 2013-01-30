@@ -12,10 +12,10 @@ class ForumsController < ApplicationController
     @topics = if admin_or_moderator?(@forum)
                 @forum.topics
               else
-                @forum.topics.visible.approved_or_pending_review_for(forem_user)
+                @forum.topics.visible.approved_or_pending_review_for(current_user)
               end
 
-    @topics = @topics.by_pinned_or_most_recent_post.page(params[:page]).per(Forem.per_page)
+    @topics = @topics.by_pinned_or_most_recent_post.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html
@@ -25,6 +25,6 @@ class ForumsController < ApplicationController
 
   private
   def register_view
-    @forum.register_view_by(forem_user)
+    @forum.register_view_by(current_user)
   end
 end

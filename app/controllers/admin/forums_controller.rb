@@ -4,15 +4,15 @@ module Forem
       before_filter :find_forum, :only => [:edit, :update, :destroy]
 
       def index
-        @forums = Forem::Forum.all
+        @forums = Forum.all
       end
 
       def new
-        @forum = Forem::Forum.new
+        @forum = Forum.new
       end
 
       def create
-        @forum = Forem::Forum.new(params[:forum])
+        @forum = Forum.new(params[:forum])
         if @forum.save
           flash[:notice] = t("forem.admin.forum.created")
           redirect_to admin_forums_path
@@ -41,7 +41,7 @@ module Forem
       private
 
         def find_forum
-          @forum = Forem::Forum.find(params[:id])
+          @forum = Forum.find(params[:id])
         end
 
     end

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_forem_user
+  before_filter :authenticate_user
   before_filter :find_topic
   before_filter :block_spammers, :only => [:new, :create]
 
@@ -33,12 +33,12 @@ class PostsController < ApplicationController
 
   def edit
     authorize! :edit_post, @topic.forum
-    @post = Forem::Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
     authorize! :edit_post, @topic.forum
-    @post = Forem::Post.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.owner_or_admin?(forem_user) and @post.update_attributes(params[:post])
       redirect_to [@topic.forum, @topic], :notice => t('edited', :scope => 'forem.post')
     else
@@ -69,11 +69,11 @@ class PostsController < ApplicationController
   private
 
   def find_topic
-    @topic = Forem::Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   def block_spammers
-    if forem_user.forem_state == "spam"
+    if current_user.forem_state == "spam"
       flash[:alert] = t('forem.general.flagged_for_spam') + ' ' + t('forem.general.cannot_create_post')
       redirect_to :back
     end

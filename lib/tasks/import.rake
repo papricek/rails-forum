@@ -109,6 +109,8 @@ namespace :db do
         end
       end
     end
+    Topic.update_all("state = 'approved'")
+    Post.update_all("state = 'approved'")
 
   end
 end
