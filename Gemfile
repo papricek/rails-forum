@@ -5,8 +5,17 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'devise'
-gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'kaminari', '0.13.0'
+
+gem 'simple_form'
+gem 'cancan', '1.6.8'
+gem 'workflow', '0.8.0'
+gem 'friendly_id', '~> 4.0', '>= 4.0.9'
+gem 'gemoji', '= 1.1.2'
+gem 'decorators', '~> 1.0.2'
+gem 'redcarpet'
+gem 'pygments.rb'
+gem 'nokogiri'
 
 group :development do
   gem 'thin'

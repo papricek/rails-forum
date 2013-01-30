@@ -1,9 +1,23 @@
+require 'cancan'
+
 class ApplicationController < ActionController::Base
-
-  def forem_user
-    current_user
+  rescue_from CanCan::AccessDenied do
+    redirect_to root_path, :alert => t("forem.access_denied")
   end
-  helper_method :forem_user
 
-  protect_from_forgery
+  def current_ability
+    Ability.new(current_user)
+  end
+
+  private
+  def admin?
+    current_user && current_user.forem_admin?
+  end
+  helper_method :admin?
+
+  def admin_or_moderator?(forum)
+    current_user && (current_user.forem_admin? || forum.moderator?(current_user))
+  end
+  helper_method :admin_or_moderator?
+
 end
