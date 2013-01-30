@@ -139,9 +139,9 @@ class Topic < ActiveRecord::Base
   end
 
   def skip_pending_review
-    if user.try(:forem_needs_moderation?)
-      update_attribute(:state, 'approved')
-    end
+    #if user && user.respond_to?(:forem_needs_moderation?) && user.try(:forem_needs_moderation?)
+    #  update_attribute(:state, 'approved')
+    #end
   end
 
   def approve_user_and_posts

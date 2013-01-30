@@ -78,17 +78,17 @@ namespace :db do
     #       811, 801, 633, 684, 679, 678, 674, 675, 670, 667]
     #UserOld.where('id > 670').where('id NOT IN(?)', ids).destroy_all
     #UserOld.where('id IN (?)', [665, 657, 669, ]).destroy_all
-    category = Forem::Category.create(name: "General")
+    category = Category.create(name: "General")
     ForumOld.all.each do |forum_old|
-      forum = Forem::Forum.new(name: __(forum_old.forum_name),
+      forum = Forum.new(name: __(forum_old.forum_name),
                                description: __(forum_old.forum_desc || '&nbsp;'))
       forum.category = category
       forum.save!
       TopicOld.where(forum_id: forum_old.id).each do |topic_old|
         topic = Topic.new(subject: __(topic_old.subject))
         topic.forum = forum
-        topic.created_at = topic_old.posted
-        topic.updated_at = topic_old.posted
+        topic.created_at = Time.at(topic_old.posted) if topic_old.posted
+        topic.updated_at = Time.at(topic_old.last_post) if topic_old.last_post
         topic.views_count = topic_old.num_views
 
         poster = UserOld.where('username = ? OR realname = ? ', topic_old.poster, topic_old.poster).first
@@ -97,6 +97,8 @@ namespace :db do
         end
         puts topic.inspect
         topic.save!
+        topic.update_column(:created_at, Time.at(topic_old.posted)) if topic_old.posted
+        topic.update_column(:updated_at, Time.at(topic_old.last_post)) if topic_old.last_post
 
         PostOld.where(:topic_id => topic_old.id).order('posted desc').each do |p|
           poster = UserOld.find_by_id(p.poster_id)
@@ -106,6 +108,8 @@ namespace :db do
           post = topic.posts.build(text: __(p.message))
           post.user_id = user.id
           post.save!
+          post.update_column(:created_at, Time.at(p.posted)) if p.posted
+          post.update_column(:updated_at, Time.at(p.posted)) if p.posted
         end
       end
     end

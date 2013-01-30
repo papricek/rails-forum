@@ -3,21 +3,21 @@
 
   <div class='user'>
     <div class='username'>
-      <%= link_to_if Forem.user_profile_links, post.user, [main_app, post.user] %>
+      <%#= link_to_if Forem.user_profile_links, post.user, [main_app, post.user] %>
     </div>
-    <div class='icon'><%= forem_avatar(post.user, :size => 60) %></div>
+    <div class='icon'></div>
   </div>
 
   <div class='contents'>
     <% if post.pending_review? %>
       <div class='moderation'>
         <%= t(".pending_review") %>
-        <% if forem_admin_or_moderator?(post.topic.forum) %>
+        <% if fadmin_or_moderator?(post.topic.forum) %>
           <% if local_assigns[:mass_moderation] %>
-            <%= render "forem/posts/moderation_tools", :post => post %>
+            <%= render "posts/moderation_tools", :post => post %>
           <% else %>
-            <%= form_tag forem.forum_moderate_posts_path(post.topic.forum), :method => :put do %>
-              <%= render "forem/posts/moderation_tools", :post => post %>
+            <%= form_tag forum_moderate_posts_path(post.topic.forum), :method => :put do %>
+              <%= render "posts/moderation_tools", :post => post %>
             <% end %>
           <% end %>
         <% end %>
@@ -36,20 +36,20 @@
     <% end %>
 
     <ul class='actions'>
-      <% if forem_user %>
+      <% if current_user %>
         <% if can?(:reply, post.topic) %>
           <% if post.topic.can_be_replied_to? %>
-            <li><%= link_to t('reply', :scope => 'forem.topic'), forem.new_topic_post_path(post.topic, :reply_to_id => post.id) %></li>
+            <li><%= link_to t('reply', :scope => 'forem.topic'), new_topic_post_path(post.topic, :reply_to_id => post.id) %></li>
           <% end %>
           <% if post.topic.can_be_replied_to? %>
-            <li><%= link_to t('quote', :scope => 'forem.topic'), forem.new_topic_post_path(post.topic, :reply_to_id => post.id, :quote => true) %></li>
+            <li><%= link_to t('quote', :scope => 'forem.topic'), new_topic_post_path(post.topic, :reply_to_id => post.id, :quote => true) %></li>
           <% end %>
         <% end %>
-        <% if post.owner_or_admin?(forem_user) %>
+        <% if post.owner_or_admin?(current_user) %>
           <% if can?(:edit_post, post.topic.forum) %>
-            <li><%= link_to t('edit', :scope => 'forem.post'), forem.edit_topic_post_path(post.topic, post) %></li>
+            <li><%= link_to t('edit', :scope => 'forem.post'), edit_topic_post_path(post.topic, post) %></li>
           <% end %>
-          <li><%= link_to t('delete', :scope => 'forem.topic'), forem.topic_post_path(post.topic, post), :method => :delete, :confirm => t("are_you_sure") %></li>
+          <li><%= link_to t('delete', :scope => 'forem.topic'), topic_post_path(post.topic, post), :method => :delete, :confirm => t("are_you_sure") %></li>
         <% end %>
       <% end %>
     </ul>
