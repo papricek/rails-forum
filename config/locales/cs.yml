@@ -1,4 +1,7 @@
-en:
+cs:
+  common:
+    name: Rails-fórum.cz
+    where_are_you: Kde jste
   forem:
     general:
       forum: Forum
@@ -190,10 +193,3 @@ en:
       post:
         text: Text
 
-  # General stuff
-  time_ago_in_words: "%{time} ago"
-  ago: " ago"
-  ago_by: " ago by"
-  by: by
-  started_by: "Started by "
-  are_you_sure: Are you sure?

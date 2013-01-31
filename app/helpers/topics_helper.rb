@@ -2,7 +2,7 @@ module TopicsHelper
   def link_to_latest_post(topic)
     post = relevant_posts(topic).last
     return if post.blank?
-    text = "#{time_ago_in_words(post.created_at)} #{t("ago_by")} #{post.user.nick}"
+    text = "#{time_ago_in_words(post.created_at)}:  #{post.user.nick}"
     link_to text, forum_topic_path(post.topic.forum, post.topic, :anchor => "post-#{post.id}", :page => topic.last_page)
   end
 

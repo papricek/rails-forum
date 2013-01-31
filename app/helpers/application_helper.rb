@@ -1,5 +1,6 @@
 module ApplicationHelper
   include FormattingHelper
+  include NavigationHelper
   # processes text with installed markup formatter
   def forem_format(text, *options)
     forem_emojify(as_formatted_html(text))

@@ -1,0 +1,14 @@
+<nav id="breadcrumbs">
+
+  <span id="breadcrumbs-heading"><%= t('common.where_are_you') %>: </span>
+  <%= link_to t('common.name'), root_path, :class => "home" %>
+  <% @breadcrumbs.each do |item| %>
+    &raquo;
+    <% if item.url.blank? %>
+      <strong><%= item.title.html_safe %></strong>
+    <% else %>
+      <%= link_to item.title.html_safe, item.url %>
+    <% end %>
+  <% end %>
+
+</nav>
