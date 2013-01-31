@@ -1,0 +1,15 @@
+.navbar {
+  .navbar-inner {
+    background-color: $lightGreen;
+    border-color: $lightGreen;
+    background-image: none;
+  }
+  strong {
+    color: white;
+  }
+  .logo{
+    font-size: 3em;
+    color: $darkRed;
+    font-weight: bold;
+  }
+}
