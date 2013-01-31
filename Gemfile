@@ -6,6 +6,7 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'devise'
 gem 'kaminari', '0.13.0'
+gem 'bootstrap-sass'
 
 gem 'simple_form'
 gem 'cancan', '1.6.8'
