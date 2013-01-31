@@ -1,5 +1,9 @@
+<% set_title t('mainpage.title') %>
+<% set_description t('mainpage.description') %>
+<% add_breadcrumb t('mainpage.name') %>
+
 <div id='forums_container'>
-  <h1 id='forums_title'><%= t('.title') %></h1>
+  <h1 id='forums_title'><%= t('mainpage.title') %></h1>
 
   <%= render @forums %>
 </div>
