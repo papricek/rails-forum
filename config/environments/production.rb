@@ -67,7 +67,7 @@ RailsForum::Application.configure do
 
   config.action_mailer.default_url_options = {:host => 'rails-forum.cz'}
 
-  Whatever::Application.config.middleware.use ExceptionNotifier,
+  RailsForum::Application.config.middleware.use ExceptionNotifier,
                                               :email_prefix => "[Rails-forum.cz Exception] ",
                                               :sender_address => %{"info@rails-forum.cz" <info@rails-forum.cz>},
                                               :exception_recipients => %w{patrikjira@gmail.com}
