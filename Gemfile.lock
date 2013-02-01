@@ -99,6 +99,7 @@ GEM
       railties (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
+    libv8 (3.11.8.13)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -135,6 +136,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    ref (1.0.2)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -174,6 +176,9 @@ GEM
     steak (2.0.0)
       capybara (>= 1.0.0)
       rspec-rails (>= 2.5.0)
+    therubyracer (0.11.3)
+      libv8 (~> 3.11.8.12)
+      ref
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -235,6 +240,7 @@ DEPENDENCIES
   simple_form
   sqlite3
   steak
+  therubyracer
   thin
   uglifier (>= 1.0.3)
   workflow (= 0.8.0)
