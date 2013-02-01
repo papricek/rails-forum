@@ -8,190 +8,177 @@ cs:
     name: hlavní stránka
   forem:
     general:
-      forum: Forum
-      topics: Topics
-      topic: Topic
-      posts: Posts
+      forum: Fórum
+      topics: Témata
+      topic: Téma
+      posts: Komentáře
       posts_count:
-        zero: No posts
-        one: 1 post
-        other: "%{count} posts"
-      flagged_for_spam: Your account has been flagged for spam.
-      cannot_create_topic: You cannot create a new topic at this time.
-      cannot_create_post: You cannot create a new post at this time.
+        zero: Žádné komentáře
+        one: 1 komentář
+        other: "%{count} komentářů"
+      flagged_for_spam: Tvůj účet se nám zdá být spamem.
+      cannot_create_topic: Teď nemůžeš vložit téma.
+      cannot_create_post: Teď nemůžeš vložit komentář.
 
-    access_denied: "You are not allowed to do that."
+    access_denied: "Tohle nemůžeš!"
     admin:
-      area: Admin Area
-      welcome: "Welcome to forem's Admin Area."
+      area: Administrace
+      welcome: "Vítej v administraci, hochu..."
       forum:
-        index: Manage Forums
-        new: Creating a new forum
-        new_link: New Forum
-        deleted: The selected forum has been deleted.
-        created: This forum has been created.
-        not_created: This forum could not be created.
-        updated: That forum has been updated.
-        not_updated: This forum could not be updated.
+        index: Správa fór
+        new: Vytvořit fórum
+        new_link: Nové fórum
+        deleted: Tohle fórum bylo odstraněno.
+        created: Vytvořili jsme to pro tebe.
+        not_created: Tohle fórum nemůžeme vytvořit.
+        updated: Upravili jsme to pro tebe.
+        not_updated: Tohle fórum nemůžeme upravit.
       forums:
-        edit: Edit
-        delete: Delete
-        category: Category
-        delete_confirm: Are you sure you want to delete this forum?
+        edit: Upravit
+        delete: Odstranit
+        delete_confirm: Fakt to má jít pryč?
         index:
-          last_post: Last post
-          none: None
-          moderators: Moderators
+          last_post: Poslední komentář
+          none: Nic
+          moderators: Moderátoři
       group:
-        index: Manage Groups
-        new: New Group
-        created: The group was successfully created.
-        not_created: Group could not be created.
-        deleted: The selected group has been deleted.
+        index: Správa skupin
+        new: Nová skupina
+        created: Vytvořili jsme to pro tebe.
+        not_created: Takovou skupinu nemůžeme vytvořit.
+        deleted: Tuhle skupinu nemůžeme smazat.
       groups:
         show:
-          add_member: Add
-        edit: Edit
-        delete: Delete
-        name: Name
-      category:
-        index: Manage Forum Categories
-        new: Creating a new Forum Category
-        new_link: New Forum Category
-        deleted: The selected forum category has been deleted.
-        created: This forum category has been created.
-        not_created: This forum category could not be created.
-        updated: That forum category has been updated.
-        not_updated: This forum category could not be updated.
-      categories:
-        edit: Edit
-        delete: Delete
-        category: Category
-        delete_confirm: Are you sure you want to delete this forum category?
+          add_member: Přidat uživatele
+        edit: Upravit
+        delete: Smazat
+        name: Jméno
     common:
-      pages: Pages
+      pages: Stránky
     errors:
-      not_signed_in: You must sign in first.
-      access_denied: Access denied.
+      not_signed_in: Nejdřív se přihlaš.
+      access_denied: Přístup odepřen.
     forum:
-      header: "Viewing %{title}"
-      forums: Forums
-      new: Creating a new forum
-      edit: "Editing the %{title} forum"
+      header: "Zobrazuji %{title}"
+      forums: Fóra
+      new: Vytváříme nové fórum
+      edit: "Upravit %{title}"
       topics_count:
-        zero: 0 topics
-        one: 1 topic
-        other: "%{count} topics"
+        zero: 0 témat
+        one: 1 téma
+        few: "%{count} témata"
+        other: "%{count} témat"
       posts_count:
-        zero: 0 posts
-        one: 1 post
-        other: "%{count} posts"
+        zero: 0 komentářů
+        one: 1 komentář
+        few: "%{count} komentáře"
+        other: "%{count} komentářů"
       moderator_tools: "Moderation Tools"
     forums:
       index:
-        title: Forums
-        forum: Forum
-        views: Views
-        last_post: 'Last Post:'
-        none: None
+        title: Fóra
+        forum: Fórum
+        views: Zobrazení
+        last_post: 'Naposledy:'
+        none: Nic
     topic:
       headings:
-        topic: Topic
-        latest: Latest
-        posts: Posts
-        views: Views
+        topic: Téma
+        latest: Naposledy
+        posts: Komentáře
+        views: Zobrazení
       moderation:
-        success: The selected topic has been moderated.
-        no_option_selected: No moderation option was selected.
-      received_reply: A topic you have subscribed to has received a reply.
-      reply: Reply
-      quote: Quote
-      delete: Delete
-      created: This topic has been created.
-      new: Creating a new topic
-      edit: Editing topic
-      not_created: This topic could not be created.
-      deleted: Your topic has been deleted.
-      cannot_delete: You cannot delete a topic you do not own.
-      updated: This topic has been updated.
-      not_updated: This topic could not be updated.
-      subscribed: You have subscribed to this topic.
-      unsubscribed: You have unsubscribed from this topic.
-      none: There are no topics in this forum currently.
+        success: Vybrané fórum jsme moderovali.
+        no_option_selected: Nevybrals žádnou možnost.
+      received_reply: Téma, k jehož odběru ses přihlásil(a), má nové komentáře.
+      reply: Odpovědět
+      quote: Citovat
+      delete: Smazat
+      created: Vytvořili jsme to pro tebe.
+      new: Vytváříme
+      edit: Upravujeme
+      not_created: Tohle téma nemůžeme vytvořit.
+      deleted: Smazali jsme to.
+      cannot_delete: Tohle téma nemůžeš smazat.
+      updated: Upravili jsme to.
+      not_updated: Tohle téma nemůžeš upravit.
+      subscribed: K odběru tohohle tématu se nemůžeš přihlásit.
+      unsubscribed: Odhlásil ses od odběru tohohle tématu.
+      none: Tady nic není.
       links:
-        new: New topic
-        back_to_topics: Back to topics
-        edit: Edit topic
-      not_found: The topic you are looking for could not be found.
+        new: Nové téma
+        back_to_topics: Zpátky na témata
+        edit: Upravit téma
+      not_found: Tohle téma jsme fakt nenašli.
       hidden:
-        'true': This topic is now hidden.
-        'false': This topic is now visible.
+        'true': Tohle téma je schovaný.
+        'false': Tohle téma je vidět.
       locked:
-        'true': This topic is now locked.
-        'false': This topic is now unlocked.
+        'true': Tohle téma je zamčený.
+        'false': Tohle téma je odemčený.
       pinned:
-        'true': This topic is now pinned.
-        'false': This topic is now unpinned.
+        'true': Tohle téma je připnutý.
+        'false': Tohle téma neni připnutý.
     topics:
       show:
-        reply: Reply
-        delete: Delete
-        subscribe: Subscribe
-        unsubscribe: Unsubscribe
-        reply_to_topic: Reply to Topic
-        pending_review: This topic is currently pending review. Only the user who created it and moderators can view it.
+        reply: Odpověď
+        delete: Smazat
+        subscribe: Odebírat
+        unsubscribe: Přestat odebírat
+        reply_to_topic: Odpovědět na téma
+        pending_review: Tohle téma aktuálně čeká na schválení. Než bude schválen, uvidí ho jen moderátoři a autor.
         hide:
-          'true': Show this topic
-          'false': Hide this topic
+          'true': Zobrazit
+          'false': Schovat
         lock:
-          'true': Unlock this topic
-          'false': Lock this topic
+          'true': Odemknout
+          'false': Zamknout
         pin:
-          'true': Unpin this topic
-          'false': Pin this topic
+          'true': Odepnout
+          'false': Připnout
     post:
       buttons:
-        reply: Post Reply
-        edit: Edit
-      created: Your reply has been posted.
-      new: Post reply to
-      edit: Edit
-      not_created: Your reply could not be posted.
-      not_created_topic_locked: You cannot reply to a locked topic.
-      edited: Your post has been edited.
-      not_edited: Your post could not be edited.
-      deleted: Your post has been deleted.
-      deleted_with_topic: Only post in topic deleted. Topic also deleted.
-      cannot_delete: You cannot delete a post you do not own.
-      in_reply_to: In reply to
+        reply: Odpověděť
+        edit: Upravit
+      created: Tvoje odpověď byla publikována
+      new: Odpovědět na
+      edit: Upravit
+      not_created: Tvůj komentář jsme nemohl publikovat.
+      not_created_topic_locked: Zamčené téma nemůžeš komentovat.
+      edited: Upravili jsme tvůj komentář.
+      not_edited: Tvůj komentář jsme nemohli upravit.
+      deleted: Smazali jsme tvůj komentář.
+      deleted_with_topic: Smazali jsme jen komentáře pod tématem. A téma jsme taky smazali.
+      cannot_delete: Tenhle komentář Nemůžeš smazat.
+      in_reply_to: V odpovědi na
     posts:
       moderation:
-        moderate: Moderate
-        approve: Approve
+        moderate: Moderovat
+        approve: Schválit
         spam: Spam
-        success: The selected posts have been moderated.
+        success: Tento komentář jsme moderovali.
       post:
-        pending_review: This post is currently pending review. Only the user who posted it and moderators can view it.
+        pending_review: Tento komentář aktuálně čeká na schválení. Než bude schválen, uvidí ho jen jeho autor a moderátor.
     moderation:
-      title: "Moderation tools for %{forum}"
+      title: "Moderování fóra %{forum}"
   helpers:
     submit:
       forum:
-        create: Create Forum
-        update: Update Forum
+        create: Vytvořit fórum
+        update: Upravit fórum
       topic:
-        create: Create Topic
-        update: Update Topic
+        create: Vytvořit téma
+        update: Upravit fórum
   simple_form:
     labels:
       forum:
-        title: Title
-        description: Description
+        title: Název
+        description: Popis
       topic:
-        subject: Subject
-        locked: Locked
-        pinned: Pinned
-        hidden: Hidden
+        subject: Předmět
+        locked: Zamknout
+        pinned: Připnout
+        hidden: Schovat
         posts:
           text: Text
       post:
