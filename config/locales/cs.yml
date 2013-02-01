@@ -45,8 +45,8 @@ cs:
         index: Správa skupin
         new: Nová skupina
         created: Vytvořili jsme to pro tebe.
-        not_created: Takovou skupinu nemůžeme vytvořit.
-        deleted: Tuhle skupinu nemůžeme smazat.
+        not_created: Takovou skupinu nejde vytvořit.
+        deleted: Tuhle skupinu nejde smazat.
       groups:
         show:
           add_member: Přidat uživatele
@@ -57,7 +57,7 @@ cs:
       pages: Stránky
     errors:
       not_signed_in: Nejdřív se přihlaš.
-      access_denied: Přístup odepřen.
+      access_denied: Tam nesmíš.
     forum:
       header: "Zobrazuji %{title}"
       forums: Fóra
@@ -73,7 +73,7 @@ cs:
         one: 1 komentář
         few: "%{count} komentáře"
         other: "%{count} komentářů"
-      moderator_tools: "Moderation Tools"
+      moderator_tools: "Moderátorské nástroje"
     forums:
       index:
         title: Fóra
@@ -97,28 +97,28 @@ cs:
       created: Vytvořili jsme to pro tebe.
       new: Vytváříme
       edit: Upravujeme
-      not_created: Tohle téma nemůžeme vytvořit.
+      not_created: Tohle téma nejde vytvořit.
       deleted: Smazali jsme to.
-      cannot_delete: Tohle téma nemůžeš smazat.
+      cannot_delete: Tohle téma nejde smazat.
       updated: Upravili jsme to.
-      not_updated: Tohle téma nemůžeš upravit.
-      subscribed: K odběru tohohle tématu se nemůžeš přihlásit.
-      unsubscribed: Odhlásil ses od odběru tohohle tématu.
+      not_updated: Tohle téma nejde upravit.
+      subscribed: K odběru tohohle tématu se nejde přihlásit.
+      unsubscribed: Odhlásili jsme tě z odběru tohohle tématu.
       none: Tady nic není.
       links:
         new: Nové téma
         back_to_topics: Zpátky na témata
         edit: Upravit téma
-      not_found: Tohle téma jsme fakt nenašli.
+      not_found: Tohle téma tu není.
       hidden:
-        'true': Tohle téma je schovaný.
+        'true': Tohle téma je schované.
         'false': Tohle téma je vidět.
       locked:
-        'true': Tohle téma je zamčený.
-        'false': Tohle téma je odemčený.
+        'true': Tohle téma je zamčené.
+        'false': Tohle téma je odemčené.
       pinned:
-        'true': Tohle téma je připnutý.
-        'false': Tohle téma neni připnutý.
+        'true': Tohle téma je připnuté.
+        'false': Tohle téma neni připnuté.
     topics:
       show:
         reply: Odpověď
@@ -126,7 +126,7 @@ cs:
         subscribe: Odebírat
         unsubscribe: Přestat odebírat
         reply_to_topic: Odpovědět na téma
-        pending_review: Tohle téma aktuálně čeká na schválení. Než bude schválen, uvidí ho jen moderátoři a autor.
+        pending_review: Tohle téma aktuálně čeká na schválení. Než se tak stane, uvidí ho jen moderátoři a autor.
         hide:
           'true': Zobrazit
           'false': Schovat
@@ -140,16 +140,16 @@ cs:
       buttons:
         reply: Odpověděť
         edit: Upravit
-      created: Tvoje odpověď byla publikována
+      created: Tvoji odpověď jsme publikovali
       new: Odpovědět na
       edit: Upravit
-      not_created: Tvůj komentář jsme nemohl publikovat.
-      not_created_topic_locked: Zamčené téma nemůžeš komentovat.
+      not_created: Tvůj komentář jsme nemohli publikovat.
+      not_created_topic_locked: Zamčené téma nejde komentovat.
       edited: Upravili jsme tvůj komentář.
-      not_edited: Tvůj komentář jsme nemohli upravit.
+      not_edited: Tvůj komentář nejde upravit.
       deleted: Smazali jsme tvůj komentář.
-      deleted_with_topic: Smazali jsme jen komentáře pod tématem. A téma jsme taky smazali.
-      cannot_delete: Tenhle komentář Nemůžeš smazat.
+      deleted_with_topic: Smazali jsme komentáře pod tématem. A téma jsme taky smazali.
+      cannot_delete: Tenhle komentář nejde smazat.
       in_reply_to: V odpovědi na
     posts:
       moderation:
@@ -158,7 +158,7 @@ cs:
         spam: Spam
         success: Tento komentář jsme moderovali.
       post:
-        pending_review: Tento komentář aktuálně čeká na schválení. Než bude schválen, uvidí ho jen jeho autor a moderátor.
+        pending_review: Tento komentář aktuálně čeká na schválení. Než se tak stane, uvidí ho jen jeho autor a moderátor.
     moderation:
       title: "Moderování fóra %{forum}"
   helpers:
