@@ -92,6 +92,7 @@ namespace :db do
         topic.views_count = topic_old.num_views
 
         poster = UserOld.where('username = ? OR realname = ? ', topic_old.poster, topic_old.poster).first
+        next if poster.blank?
         if poster && user = User.find_by_email(poster.email)
           topic.user = user
         end
