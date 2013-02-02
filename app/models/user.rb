@@ -12,11 +12,9 @@ class User < ActiveRecord::Base
 
   has_many :posts, :foreign_key => "user_id"
   has_many :topics, :foreign_key => "user_id"
-  has_many :memberships, :foreign_key => "member_id"
-  has_many :groups, :through => :memberships, :source => :group
 
   def needs_moderation?
-    forem_state == 'approved'
+    state == 'approved'
   end
 
   private

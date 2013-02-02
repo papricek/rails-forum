@@ -36,7 +36,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = @forum.topics.find(params[:id])
-    if current_user == @topic.user || current_user.forem_admin?
+    if current_user == @topic.user || current_user.admin?
       @topic.destroy
       flash[:notice] = t("forem.topic.deleted")
     else
@@ -84,7 +84,7 @@ class TopicsController < ApplicationController
   end
 
   def block_spammers
-    if current_user.forem_state == "spam"
+    if current_user.state == "spam"
       flash[:alert] = t('forem.general.flagged_for_spam') + ' ' + t('forem.general.cannot_create_topic')
       redirect_to :back
     end

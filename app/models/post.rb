@@ -66,11 +66,11 @@ class Post < ActiveRecord::Base
     end
 
     def visible
-      joins(:topic).where(:forem_topics => {:hidden => false})
+      joins(:topic).where(:topics => {:hidden => false})
     end
 
     def topic_not_pending_review
-      joins(:topic).where(:forem_topics => {:state => 'approved'})
+      joins(:topic).where(:topics => {:state => 'approved'})
     end
 
     def moderate!(posts)
@@ -83,11 +83,11 @@ class Post < ActiveRecord::Base
   end
 
   def user_auto_subscribe?
-    user && user.respond_to?(:forem_auto_subscribe) && user.forem_auto_subscribe?
+    user && user.respond_to?(:forem_auto_subscribe) && user.auto_subscribe?
   end
 
   def owner_or_admin?(other_user)
-    user == other_user || other_user.forem_admin?
+    user == other_user || other_user.admin?
   end
 
   protected
@@ -118,11 +118,11 @@ class Post < ActiveRecord::Base
   end
 
   def approve_user
-    user.update_attribute(:forem_state, "approved") if user && user.forem_state != "approved"
+    user.update_attribute(:state, "approved") if user && user.state != "approved"
   end
 
   def blacklist_user
-    user.update_attribute(:forem_state, "spam") if user
+    user.update_attribute(:state, "spam") if user
   end
 
 end

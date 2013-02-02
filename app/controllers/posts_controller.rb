@@ -73,7 +73,7 @@ class PostsController < ApplicationController
   end
 
   def block_spammers
-    if current_user.forem_state == "spam"
+    if current_user.state == "spam"
       flash[:alert] = t('forem.general.flagged_for_spam') + ' ' + t('forem.general.cannot_create_post')
       redirect_to :back
     end

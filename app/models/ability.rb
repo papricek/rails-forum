@@ -44,11 +44,11 @@ class Ability
     end
 
     can :edit_post, Forum do |forum|
-      user.can_editm_posts?(forum)
+      user.can_edit_posts?(forum)
     end
 
     can :moderate, Forum do |forum|
-      user.can_moderate_forum?(forum) || user.forem_admin?
+      user.can_moderate_forum?(forum) || user.admin?
     end
 
     #include any abilities registered by extensions, etc.

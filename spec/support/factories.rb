@@ -37,14 +37,14 @@ FactoryGirl.define do
     email
     password "password"
     password_confirmation "password"
-    forem_auto_subscribe true
+    auto_subscribe true
 
     factory :admin do
-      forem_admin true
+      admin true
     end
 
     factory :not_autosubscribed do
-      forem_auto_subscribe false
+      auto_subscribe false
     end
   end
 

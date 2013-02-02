@@ -25,26 +25,4 @@ RailsForum::Application.routes.draw do
 
   resources :categories, :only => [:index, :show]
 
-  namespace :admin do
-    root :to => "base#index"
-    resources :groups do
-      resources :members
-    end
-
-    resources :forums do
-      resources :moderators
-    end
-
-    resources :categories
-    resources :topics do
-      member do
-        put :toggle_hide
-        put :toggle_lock
-        put :toggle_pin
-      end
-    end
-
-    get 'users/autocomplete', :to => "users#autocomplete"
-  end
-
 end

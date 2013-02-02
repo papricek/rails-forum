@@ -13,13 +13,13 @@ class ApplicationController < ActionController::Base
 
   private
   def admin?
-    current_user && current_user.forem_admin?
+    current_user && current_user.admin?
   end
 
   helper_method :admin?
 
   def admin_or_moderator?(forum)
-    current_user && (current_user.forem_admin? || forum.moderator?(current_user))
+    current_user && (current_user.admin? || forum.moderator?(current_user))
   end
 
   helper_method :admin_or_moderator?

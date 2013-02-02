@@ -10,8 +10,6 @@ class Forum < ActiveRecord::Base
 
   has_many :topics, :dependent => :destroy
   has_many :posts, :through => :topics, :dependent => :destroy
-  has_many :moderators, :through => :moderator_groups, :source => :group
-  has_many :moderator_groups
 
   validates :name, :description, :presence => true
 
@@ -22,16 +20,16 @@ class Forum < ActiveRecord::Base
   # Fix for #339
   default_scope order('name ASC')
 
-  def last_post_for(forem_user)
-    if forem_user && (forem_user.forem_admin? || moderator?(forem_user))
+  def last_post_for(current_user)
+    if current_user && (current_user.admin? || moderator?(current_user))
       posts.last
     else
-      last_visible_post(forem_user)
+      last_visible_post(current_user)
     end
   end
 
-  def last_visible_post(forem_user)
-    posts.approved_or_pending_review_for(forem_user).last
+  def last_visible_post(current_user)
+    posts.approved_or_pending_review_for(current_user).last
   end
 
   def moderator?(user)

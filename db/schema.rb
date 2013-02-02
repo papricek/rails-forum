@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130105522) do
+ActiveRecord::Schema.define(:version => 20130202165136) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -106,9 +106,9 @@ ActiveRecord::Schema.define(:version => 20130130105522) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                           :null => false
     t.datetime "updated_at",                                           :null => false
-    t.boolean  "forem_admin",            :default => false
-    t.string   "forem_state",            :default => "pending_review"
-    t.boolean  "forem_auto_subscribe",   :default => false
+    t.boolean  "admin",                  :default => false
+    t.string   "state",                  :default => "pending_review"
+    t.boolean  "auto_subscribe",         :default => false
     t.string   "role"
     t.string   "name"
     t.string   "url"
