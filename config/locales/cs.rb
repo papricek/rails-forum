@@ -145,23 +145,23 @@
                 :accepted            => "musí být potvrzeno",
                 :empty               => "nesmí být prázdný/é",
                 :blank               => "je povinná položka", # alternate formulation: "is required"
-                :too_long            => "je příliš dlouhá/ý (max. {{count}} znaků)",
-                :too_short           => "je příliš krátký/á (min. {{count}} znaků)",
-                :wrong_length        => "nemá správnou délku (očekáváno {{count}} znaků)",
+                :too_long            => "je příliš dlouhá/ý (max. %{count} znaků)",
+                :too_short           => "je příliš krátký/á (min. %{count} znaků)",
+                :wrong_length        => "nemá správnou délku (očekáváno %{count} znaků)",
                 :taken               => "již databáze obsahuje",
                 :not_a_number        => "není číslo",
-                :greater_than        => "musí být větší než {{count}}",
-                :greater_than_or_equal_to => "musí být větší nebo rovno {{count}}",
-                :equal_to            => "musí být rovno {{count}}",
-                :less_than           => "musí být méně než {{count}}",
-                :less_than_or_equal_to    => "musí být méně nebo rovno {{count}}",
+                :greater_than        => "musí být větší než %{count}",
+                :greater_than_or_equal_to => "musí být větší nebo rovno %{count}",
+                :equal_to            => "musí být rovno %{count}",
+                :less_than           => "musí být méně než %{count}",
+                :less_than_or_equal_to    => "musí být méně nebo rovno %{count}",
                 :odd                 => "musí být liché číslo",
                 :even                => "musí být sudé číslo"
             },
             :template => {
                 :header   => {
-                    :one => "Při ukládání objektu {{model}} došlo k chybám a nebylo jej možné uložit",
-                    :other => "Při ukládání objektu {{model}} došlo ke {{count}} chybám a nebylo možné jej uložit"
+                    :one => "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit",
+                    :other => "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
                 },
                 :body  => "Následující pole obsahují chybně vyplněné údaje:"
             }

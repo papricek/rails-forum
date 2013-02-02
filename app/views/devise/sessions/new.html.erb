@@ -1,0 +1,14 @@
+<% set_title_and_breadcrumb t('devise.navbar.sign_in') %>
+<h2><%= t('devise.navbar.sign_in') %></h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, :required => false, :autofocus => true %>
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+
+    <%= f.button :submit, t('devise.forms.sign_in.button') %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

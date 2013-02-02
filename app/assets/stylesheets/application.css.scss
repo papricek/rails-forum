@@ -9,5 +9,7 @@ $linkColorHover: $lightGreen;
 
 @import "bootstrap";
 @import "bootstrap-responsive";
+@import "devise";
 @import "generic";
-@import "containers/*";
+@import "containers/alert";
+@import "containers/header";

@@ -1,4 +1,8 @@
 .navbar {
+  color: white;
+  a {
+    color: white
+  }
   .navbar-inner {
     background-color: $lightGreen;
     border-color: $lightGreen;
@@ -7,9 +11,12 @@
   strong {
     color: white;
   }
-  .logo{
+  .logo {
     font-size: 3em;
     color: $darkRed;
     font-weight: bold;
+  }
+  .navbar-login {
+    float: right;
   }
 }

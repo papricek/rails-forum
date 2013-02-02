@@ -10,6 +10,17 @@
           <%= link_to item.title.html_safe, item.url %>
         <% end %>
       <% end %>
+
+      <div class="navbar-login">
+        <% if user_signed_in? %>
+          <%= t('devise.navbar.signed_in', name: current_user.nick) %>
+          <%= link_to t('devise.navbar.sign_out'),
+                      destroy_user_session_path,
+                      method: 'delete' %>
+        <% else %>
+          <%= link_to t('devise.navbar.sign_in'), new_user_session_path %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

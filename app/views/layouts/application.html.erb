@@ -11,16 +11,20 @@
   <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="<%= body_class %>">
 
 <%= render "layouts/header" %>
 
+<% if notice %>
+  <p class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert"><%= alert %></p>
+<% end %>
 
-<p class="notice"><%= notice %></p>
-
-<p class="alert"><%= alert %></p>
-
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

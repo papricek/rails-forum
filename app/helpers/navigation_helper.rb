@@ -21,7 +21,10 @@ module NavigationHelper
 
   def body_class
     qualified_controller_name = controller.controller_path.gsub('/', '-')
-    "#{qualified_controller_name} #{qualified_controller_name}-#{controller.action_name}"
+    classes = [qualified_controller_name]
+    classes << "#{qualified_controller_name}-#{controller.action_name}"
+    classes << 'devise' if devise_controller?
+    classes.join(" ")
   end
 
 end
