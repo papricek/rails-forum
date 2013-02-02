@@ -49,7 +49,7 @@
           <% if can?(:edit_post, post.topic.forum) %>
             <li><%= link_to t('edit', :scope => 'forem.post'), edit_topic_post_path(post.topic, post) %></li>
           <% end %>
-          <li><%= link_to t('delete', :scope => 'forem.topic'), topic_post_path(post.topic, post), :method => :delete, :confirm => t("are_you_sure") %></li>
+          <li><%= link_to t('delete', :scope => 'forem.topic'), topic_post_path(post.topic, post), :method => :delete, :confirm => t("forem.posts.moderation.delete_confirmation") %></li>
         <% end %>
       <% end %>
     </ul>

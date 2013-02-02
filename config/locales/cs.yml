@@ -125,6 +125,7 @@ cs:
         moderate: Moderovat
         approve: Schválit
         spam: Spam
+        delete_confirmation: Opravdu smazat?
         success: Tento komentář jsme moderovali.
       post:
         pending_review: Tento komentář aktuálně čeká na schválení. Než se tak stane, uvidí ho jen jeho autor a moderátor.
