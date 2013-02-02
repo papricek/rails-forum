@@ -2,13 +2,10 @@
 <% set_description t('mainpage.description') %>
 <% add_breadcrumb t('mainpage.name') %>
 
-<div id='forums_container'>
-  <h1 id='forums_title'><%= t('mainpage.title') %></h1>
-
+<div class="container-fluid">
   <%= render @forums %>
 </div>
 
-<br>
 <footer id='admin_link'>
   <% if admin? %>
     <%= link_to t("area", :scope => "forem.admin"), admin_root_path %>

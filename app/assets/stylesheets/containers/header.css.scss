@@ -4,17 +4,25 @@
     color: white
   }
   .navbar-inner {
-    background-color: $lightGreen;
-    border-color: $lightGreen;
+    background-color: $darkRed;
+    border-color: $darkRed;
+    padding: 1em 0;
     background-image: none;
+    border-radius: 0;
+  }
+
+  .navbar-lower {
+    background-color: $lightRed;
+    padding: 0.5em 0;
+
   }
   strong {
     color: white;
   }
-  .logo {
-    font-size: 3em;
-    color: $darkRed;
+  h1 a {
+    color: white;
     font-weight: bold;
+    text-shadow: 0 0 150px #FFF, 0 0 60px #FFF, 0 0 10px #FFF;
   }
   .navbar-login {
     float: right;

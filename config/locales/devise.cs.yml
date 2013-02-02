@@ -68,9 +68,9 @@ cs:
         subject: 'Instrukce k odemknutí účtu'
         subject: 'Confirmation instructions'
     navbar:
-      signed_in: "Přihlášen: %{name}"
-      sign_out: Odhlásit
-      sign_in: Přihlásit
+      signed_in: "přihlášen: %{name}"
+      sign_out: ddhlásit
+      sign_in: přihlásit
     links:
       sign_in: Přihlášení
       register: Registrace
@@ -78,6 +78,7 @@ cs:
       reset_confirmation: Potvrdit registraci
     forms:
       sign_in:
+        heading: Přihlásit
         button: Přihlásit
       sign_up:
         heading: Registrace
