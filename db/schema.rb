@@ -11,21 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202165136) do
-
-  create_table "categories", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "slug"
-  end
-
-  add_index "categories", ["slug"], :name => "index_forem_categories_on_slug", :unique => true
+ActiveRecord::Schema.define(:version => 20130202193503) do
 
   create_table "forums", :force => true do |t|
     t.string  "name"
     t.text    "description"
-    t.integer "category_id"
     t.integer "views_count", :default => 0
     t.string  "slug"
   end

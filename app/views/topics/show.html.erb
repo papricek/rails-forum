@@ -13,7 +13,7 @@
       <%= link_to t(".delete"), forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("are_you_sure") %>
     <% end %>
     <% if current_user %>
-      <% if !@topic.subscriber?(forem_user.id) %>
+      <% if !@topic.subscriber?(current_user.id) %>
         <%= link_to t(".subscribe"), subscribe_forum_topic_path(@forum, @topic) %>
       <% else %>
         <%= link_to t(".unsubscribe"), unsubscribe_forum_topic_path(@forum, @topic) %>
@@ -31,7 +31,7 @@
     <div class="moderation" id='topic_moderation'>
       <%= t(".pending_review") %>
       <% if admin_or_moderator?(@topic.forum) %>
-        <%= form_for @topic, :url => forem.moderate_forum_topic_path(@topic.forum, @topic), :method => :put do |f| %>
+        <%= form_for @topic, :url => moderate_forum_topic_path(@topic.forum, @topic), :method => :put do |f| %>
           <%= render "moderation/options", :f => f %>
         <% end %>
       <% end %>

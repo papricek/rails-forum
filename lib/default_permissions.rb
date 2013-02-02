@@ -4,12 +4,6 @@ module DefaultPermissions
   extend ActiveSupport::Concern
 
   included do
-    unless method_defined?(:can_read_category?)
-      def can_read_category?(category)
-        true
-      end
-    end
-
     unless method_defined?(:can_read_forums?)
       def can_read_forums?
         true
