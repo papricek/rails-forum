@@ -21,38 +21,6 @@ cs:
       cannot_create_post: Teď nemůžeš vložit komentář.
 
     access_denied: "Tohle nemůžeš!"
-    admin:
-      area: Administrace
-      welcome: "Vítej v administraci, hochu..."
-      forum:
-        index: Správa fór
-        new: Vytvořit fórum
-        new_link: Nové fórum
-        deleted: Tohle fórum bylo odstraněno.
-        created: Vytvořili jsme to pro tebe.
-        not_created: Tohle fórum nemůžeme vytvořit.
-        updated: Upravili jsme to pro tebe.
-        not_updated: Tohle fórum nemůžeme upravit.
-      forums:
-        edit: Upravit
-        delete: Odstranit
-        delete_confirm: Fakt to má jít pryč?
-        index:
-          last_post: Poslední komentář
-          none: Nic
-          moderators: Moderátoři
-      group:
-        index: Správa skupin
-        new: Nová skupina
-        created: Vytvořili jsme to pro tebe.
-        not_created: Takovou skupinu nejde vytvořit.
-        deleted: Tuhle skupinu nejde smazat.
-      groups:
-        show:
-          add_member: Přidat uživatele
-        edit: Upravit
-        delete: Smazat
-        name: Jméno
     common:
       pages: Stránky
     errors:
@@ -123,6 +91,7 @@ cs:
       show:
         reply: Odpověď
         delete: Smazat
+        delete_confirmation: Opravdu smazat?
         subscribe: Odebírat
         unsubscribe: Přestat odebírat
         reply_to_topic: Odpovědět na téma

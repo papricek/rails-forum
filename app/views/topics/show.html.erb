@@ -10,7 +10,7 @@
       <%= link_to t(".reply"), new_topic_post_path(@topic) %>
     <% end %>
     <% if @topic.user == current_user || admin? %>
-      <%= link_to t(".delete"), forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("are_you_sure") %>
+      <%= link_to t(".delete"), forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("forem.topics.show.delete_confirmation") %>
     <% end %>
     <% if current_user %>
       <% if !@topic.subscriber?(current_user.id) %>
