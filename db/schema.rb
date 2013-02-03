@@ -11,36 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202193503) do
+ActiveRecord::Schema.define(:version => 20130203190403) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "forums", :force => true do |t|
     t.string  "name"
     t.text    "description"
     t.integer "views_count", :default => 0
     t.string  "slug"
+    t.integer "category_id"
   end
 
   add_index "forums", ["slug"], :name => "index_forem_forums_on_slug", :unique => true
-
-  create_table "groups", :force => true do |t|
-    t.string "name"
-  end
-
-  add_index "groups", ["name"], :name => "index_forem_groups_on_name"
-
-  create_table "memberships", :force => true do |t|
-    t.integer "group_id"
-    t.integer "member_id"
-  end
-
-  add_index "memberships", ["group_id"], :name => "index_forem_memberships_on_group_id"
-
-  create_table "moderator_groups", :force => true do |t|
-    t.integer "forum_id"
-    t.integer "group_id"
-  end
-
-  add_index "moderator_groups", ["forum_id"], :name => "index_forem_moderator_groups_on_forum_id"
 
   create_table "posts", :force => true do |t|
     t.integer  "topic_id"
