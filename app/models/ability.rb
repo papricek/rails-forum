@@ -21,13 +21,17 @@ class Ability
   def initialize(user)
     user ||= User.new
 
+    can :read, Category do |category|
+      user.can_read_category?(category)
+    end
+
     can :read, Topic do |topic|
       user.can_read_forum?(topic.forum) && user.can_read_topic?(topic)
     end
 
     if user.can_read_forums?
       can :read, Forum do |forum|
-        user.can_read_forum?(forum)
+        user.can_read_category?(forum.category) && user.can_read_forum?(forum)
       end
     end
 

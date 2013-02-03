@@ -6,12 +6,14 @@ class Forum < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
+  belongs_to :category
+
   has_many :topics, :dependent => :destroy
   has_many :posts, :through => :topics, :dependent => :destroy
 
   validates :name, :description, :presence => true
 
-  attr_accessible :title, :name, :description, :moderator_ids
+  attr_accessible :category_id, :title, :name, :description, :moderator_ids
 
   alias_attribute :title, :name
 
