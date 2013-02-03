@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203190403) do
+ActiveRecord::Schema.define(:version => 20130203225225) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130203190403) do
     t.integer "views_count", :default => 0
     t.string  "slug"
     t.integer "category_id"
+    t.integer "sort",        :default => 0
   end
 
   add_index "forums", ["slug"], :name => "index_forem_forums_on_slug", :unique => true

@@ -3,7 +3,7 @@ class ForumsController < ApplicationController
   helper 'topics'
 
   def index
-    @forums = Forum.all
+    @categories = Category.all
   end
 
   def show

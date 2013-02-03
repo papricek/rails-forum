@@ -2,9 +2,9 @@
 <% set_description t('mainpage.description') %>
 <% add_breadcrumb t('mainpage.name') %>
 
-<div class="container-fluid">
-  <%= render @forums %>
-</div>
+<table class="table mod-table">
+  <%= render @categories %>
+</table>
 
 <footer id='admin_link'>
   <% if admin? %>

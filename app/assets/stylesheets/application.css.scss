@@ -1,10 +1,11 @@
 $darkRed: #63080d;
 $lightRed: #981a20;
 $lightGreen: #6c9119;
+$darkGreen: #105f59;
 
 $bodyBackground: #e7fdfb;
 $textColor: #1c1a1a;
-$linkColor: #105f59;
+$linkColor: $darkGreen;
 $linkColorHover: $lightGreen;
 
 @import "bootstrap";
@@ -13,3 +14,4 @@ $linkColorHover: $lightGreen;
 @import "generic";
 @import "containers/alert";
 @import "containers/header";
+@import "containers/table";

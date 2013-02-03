@@ -74,6 +74,10 @@ class Topic < ActiveRecord::Base
         approved
       end
     end
+
+    def last(amount)
+      limit(amount)
+    end
   end
 
   def to_s

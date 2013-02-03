@@ -1,0 +1,13 @@
+<tr class="heading">
+  <th colspan="3">
+    <%= category.name %>
+  </th>
+</tr>
+
+<% category.forums.each do |forum| %>
+  <tr>
+    <td colspan="3">
+      <%= link_to forum.title, forum_path(forum) %>
+    </td>
+  </tr>
+<% end %>
