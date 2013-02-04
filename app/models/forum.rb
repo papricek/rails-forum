@@ -17,9 +17,6 @@ class Forum < ActiveRecord::Base
 
   alias_attribute :title, :name
 
-  # Fix for #339
-  default_scope order('name ASC')
-
   def last_post_for(current_user)
     if current_user && (current_user.admin? || moderator?(current_user))
       posts.last
