@@ -1,8 +1,4 @@
 .navbar {
-  color: white;
-  a {
-    color: white
-  }
   .navbar-inner {
     background-color: white;
     border: 0;
@@ -10,6 +6,25 @@
     padding: 0;
     background-image: none;
     border-radius: 0;
+
+    h1 a {
+      font-size: 0.75em;
+      color: $darkRed;
+      font-weight: normal;
+      //text-shadow: 0 0 150px $darkRed, 0 0 30px $darkRed, 0 0 10px $darkRed;
+    }
+
+    .navbar-login {
+      float: right;
+      background: $darkRed;
+      margin: 0;
+      padding: 0 0.5em 0.5em 0.5em;
+      @include round-bottom;
+      color: white;
+      a {
+        color: white;
+      }
+    }
   }
 
   .navbar-breadcrumbs {
@@ -22,19 +37,5 @@
     strong {
       font-weight: normal;
     }
-  }
-
-  h1 a {
-    font-size: 0.75em;
-    color: $darkRed;
-    font-weight: normal;
-    //text-shadow: 0 0 150px $darkRed, 0 0 30px $darkRed, 0 0 10px $darkRed;
-  }
-  .navbar-login {
-    float: right;
-    background: $darkRed;
-    margin: 0;
-    padding: 0 0.5em 0.5em 0.5em;
-    @include round-bottom;
   }
 }

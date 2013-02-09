@@ -5,9 +5,9 @@
 
 <%= forem_pages_widget(@topics) %>
 
-<td class="topics-count"><%= topics_count(forum) %></td>
-<td class="posts-count"><%= posts_count(forum) %></td>
-<td class="views-count"><%= forum.views_count %></td>
+<td class="topics-count"><%= topics_count(@forum) %></td>
+<td class="posts-count"><%= posts_count(@forum) %></td>
+<td class="views-count"><%= @forum.views_count %></td>
 
 <table class='topics subdued' cellspacing='0'>
   <thead>
