@@ -2,11 +2,21 @@ $darkRed: #63080d;
 $lightRed: #981a20;
 $lightGreen: #6c9119;
 $darkGreen: #105f59;
+$lightGrey: #fafafa;
 
-$bodyBackground: #e7fdfb;
+$bodyBackground: white;
 $textColor: #1c1a1a;
 $linkColor: $darkGreen;
 $linkColorHover: $lightGreen;
+
+@mixin round-bottom($radius: 5px){
+  -moz-border-radius-bottomright: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-radius: 0 0 $radius $radius;
+}
+
 
 @import "bootstrap";
 @import "bootstrap-responsive";

@@ -69,7 +69,7 @@ cs:
         subject: 'Confirmation instructions'
     navbar:
       signed_in: "přihlášen: %{name}"
-      sign_out: ddhlásit
+      sign_out: odhlásit
       sign_in: přihlásit
     links:
       sign_in: Přihlášení

@@ -4,27 +4,37 @@
     color: white
   }
   .navbar-inner {
-    background-color: $darkRed;
-    border-color: $darkRed;
-    padding: 1em 0;
+    background-color: white;
+    border: 0;
+    border-top: 5px solid $darkRed;
+    padding: 0;
     background-image: none;
     border-radius: 0;
   }
 
-  .navbar-lower {
-    background-color: $lightRed;
+  .navbar-breadcrumbs {
+    float: right;
     padding: 0.5em 0;
+    color: $darkRed;
+    a {
+      color: $darkRed;
+    }
+    strong {
+      font-weight: normal;
+    }
+  }
 
-  }
-  strong {
-    color: white;
-  }
   h1 a {
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 0 150px #FFF, 0 0 60px #FFF, 0 0 10px #FFF;
+    font-size: 0.75em;
+    color: $darkRed;
+    font-weight: normal;
+    //text-shadow: 0 0 150px $darkRed, 0 0 30px $darkRed, 0 0 10px $darkRed;
   }
   .navbar-login {
     float: right;
+    background: $darkRed;
+    margin: 0;
+    padding: 0 0.5em 0.5em 0.5em;
+    @include round-bottom;
   }
 }

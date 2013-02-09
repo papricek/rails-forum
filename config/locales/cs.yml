@@ -1,7 +1,6 @@
 cs:
   common:
     name: rails-forum.cz
-    where_are_you: kde jste
   mainpage:
     title: Ruby on Rails diskusní fórum
     description: Lidi, Ruby on Rails, lidi.

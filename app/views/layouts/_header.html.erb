@@ -1,23 +1,6 @@
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
     <div class="container-fluid">
-      <h1>
-        <%= link_to t('common.name'), root_path, :class => "logo" %>
-      </h1>
-    </div>
-  </div>
-
-  <div class="navbar-lower">
-    <div class="container-fluid">
-      <span><%= t('common.where_are_you') %>: </span>
-      <% @breadcrumbs.each do |item| %>
-        &raquo;
-        <% if item.url.blank? %>
-          <strong><%= item.title.html_safe %></strong>
-        <% else %>
-          <%= link_to item.title.html_safe, item.url %>
-        <% end %>
-      <% end %>
 
       <div class="navbar-login">
         <% if user_signed_in? %>
@@ -30,6 +13,24 @@
           <%= link_to t('devise.navbar.sign_in'), new_user_session_path %>
         <% end %>
       </div>
+
+      <h1>
+        <%= link_to t('common.name'), root_path, :class => "logo" %>
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="navbar-breadcrumbs">
+    <div class="container-fluid">
+      <% @breadcrumbs.each_with_index do |item, index| %>
+        <%= '&raquo;' unless index == 0 %>
+        <% if item.url.blank? %>
+          <strong><%= item.title.html_safe %></strong>
+        <% else %>
+          <%= link_to item.title.html_safe, item.url %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
