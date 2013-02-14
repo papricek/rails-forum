@@ -6,8 +6,8 @@ $lightGrey: #fafafa;
 
 $bodyBackground: white;
 $textColor: #1c1a1a;
-$linkColor: $darkGreen;
-$linkColorHover: $lightGreen;
+$linkColor: $darkRed;
+$linkColorHover: $lightRed;
 
 @mixin round-bottom($radius: 5px){
   -moz-border-radius-bottomright: $radius;

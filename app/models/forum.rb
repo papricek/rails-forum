@@ -8,7 +8,7 @@ class Forum < ActiveRecord::Base
 
   belongs_to :category
 
-  has_many :topics, :dependent => :destroy
+  has_many :topics, :order => 'last_post_at asc', :dependent => :destroy
   has_many :posts, :through => :topics, :dependent => :destroy
 
   validates :name, :description, :presence => true

@@ -6,8 +6,27 @@
 
 <% category.forums.each do |forum| %>
   <tr>
-    <td colspan="3">
-      <%= link_to forum.title, forum_path(forum) %>
+    <td colspan="1">
+      <h2><%= link_to forum.title, forum_path(forum) %></h2>
+    </td>
+
+    <td colspan="2">
+      <% forum.topics.last(3).each do |topic| %>
+
+        <h3><%= link_to topic.subject, topic_path(topic) %></h3>
+
+        <p>
+          <span class="started-by">
+            <%= t('common.started_by', name: topic.user.nick) %>
+          </span>
+
+          <% if topic.posts.last %>
+            <span class="date">
+              <%= t('common.created_ago', before: time_ago_in_words(topic.posts.last.created_at)) %>
+            </span>
+          <% end %>
+        </p>
+      <% end %>
     </td>
   </tr>
 <% end %>

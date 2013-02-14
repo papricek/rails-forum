@@ -44,7 +44,7 @@
         :formats => {
             :default => "%a %d. %B %Y %H:%M %z",
             :short   => "%d. %m. v&nbsp;%H:%M",
-            :ideal   => "%d. %m. %Y v&nbsp;%H:%M",
+            :ideal   => "v&nbsp;%H.%M %d. %B. %Y ",
             :long    => "%A %d. %B %Y %H:%M",
         },
         :am => 'am',
@@ -128,6 +128,10 @@
             },
             :over_x_years => {
                 :one => 'více než před rokem',
+                :other => 'více než %{count} roky'
+            },
+            :almost_x_years => {
+                :one => 'takřka dekádou',
                 :other => 'více než %{count} roky'
             }
         }

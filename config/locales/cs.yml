@@ -1,135 +1,134 @@
 cs:
   common:
     name: rails-forum.cz
+    started_by: "od %{name}"
+    created_ago: "před %{before}"
   mainpage:
     title: Ruby on Rails diskusní fórum
     description: Lidi, Ruby on Rails, lidi.
     name: hlavní stránka
-  forem:
-    general:
-      forum: Fórum
-      topics: Témata
-      topic: Téma
-      posts: Komentáře
-      posts_count:
-        zero: Žádné komentáře
-        one: 1 komentář
-        other: "%{count} komentářů"
-      flagged_for_spam: Tvůj účet se nám zdá být spamem.
-      cannot_create_topic: Teď nemůžeš vložit téma.
-      cannot_create_post: Teď nemůžeš vložit komentář.
+  general:
+    forum: Fórum
+    topics: Témata
+    topic: Téma
+    posts: Komentáře
+    posts_count:
+      zero: Žádné komentáře
+      one: 1 komentář
+      other: "%{count} komentářů"
+    flagged_for_spam: Tvůj účet se nám zdá být spamem.
+    cannot_create_topic: Teď nemůžeš vložit téma.
+    cannot_create_post: Teď nemůžeš vložit komentář.
 
-    access_denied: "Tohle nemůžeš!"
-    common:
-      pages: Stránky
-    errors:
-      not_signed_in: Nejdřív se přihlaš.
-      access_denied: Tam nesmíš.
-    forum:
-      header: "Zobrazuji %{title}"
-      forums: Fóra
-      new: Vytváříme nové fórum
-      edit: "Upravit %{title}"
-      topics_count:
-        zero: 0 témat
-        one: 1 téma
-        few: "%{count} témata"
-        other: "%{count} témat"
-      posts_count:
-        zero: 0 komentářů
-        one: 1 komentář
-        few: "%{count} komentáře"
-        other: "%{count} komentářů"
-      moderator_tools: "Moderátorské nástroje"
-    forums:
-      index:
-        title: Fóra
-        forum: Fórum
-        views: Zobrazení
-        last_post: 'Naposledy:'
-        none: Nic
-    topic:
-      headings:
-        topic: Téma
-        latest: Naposledy
-        posts: Komentáře
-        views: Zobrazení
-      moderation:
-        success: Vybrané fórum jsme moderovali.
-        no_option_selected: Nevybrals žádnou možnost.
-      received_reply: Téma, k jehož odběru ses přihlásil(a), má nové komentáře.
-      reply: Odpovědět
-      quote: Citovat
-      delete: Smazat
-      created: Vytvořili jsme to pro tebe.
-      new: Vytváříme
-      edit: Upravujeme
-      not_created: Tohle téma nejde vytvořit.
-      deleted: Smazali jsme to.
-      cannot_delete: Tohle téma nejde smazat.
-      updated: Upravili jsme to.
-      not_updated: Tohle téma nejde upravit.
-      subscribed: K odběru tohohle tématu se nejde přihlásit.
-      unsubscribed: Odhlásili jsme tě z odběru tohohle tématu.
-      none: Tady nic není.
-      links:
-        new: Nové téma
-        back_to_topics: Zpátky na témata
-        edit: Upravit téma
-      not_found: Tohle téma tu není.
-      hidden:
-        'true': Tohle téma je schované.
-        'false': Tohle téma je vidět.
-      locked:
-        'true': Tohle téma je zamčené.
-        'false': Tohle téma je odemčené.
-      pinned:
-        'true': Tohle téma je připnuté.
-        'false': Tohle téma neni připnuté.
-    topics:
-      show:
-        reply: Odpověď
-        delete: Smazat
-        delete_confirmation: Opravdu smazat?
-        subscribe: Odebírat
-        unsubscribe: Přestat odebírat
-        reply_to_topic: Odpovědět na téma
-        pending_review: Tohle téma aktuálně čeká na schválení. Než se tak stane, uvidí ho jen moderátoři a autor.
-        hide:
-          'true': Zobrazit
-          'false': Schovat
-        lock:
-          'true': Odemknout
-          'false': Zamknout
-        pin:
-          'true': Odepnout
-          'false': Připnout
-    post:
-      buttons:
-        reply: Odpověděť
-        edit: Upravit
-      created: Tvoji odpověď jsme publikovali
-      new: Odpovědět na
-      edit: Upravit
-      not_created: Tvůj komentář jsme nemohli publikovat.
-      not_created_topic_locked: Zamčené téma nejde komentovat.
-      edited: Upravili jsme tvůj komentář.
-      not_edited: Tvůj komentář nejde upravit.
-      deleted: Smazali jsme tvůj komentář.
-      deleted_with_topic: Smazali jsme komentáře pod tématem. A téma jsme taky smazali.
-      cannot_delete: Tenhle komentář nejde smazat.
-      in_reply_to: V odpovědi na
-    posts:
-      moderation:
-        moderate: Moderovat
-        approve: Schválit
-        spam: Spam
-        delete_confirmation: Opravdu smazat?
-        success: Tento komentář jsme moderovali.
-      post:
-        pending_review: Tento komentář aktuálně čeká na schválení. Než se tak stane, uvidí ho jen jeho autor a moderátor.
+  access_denied: "Tohle nemůžeš!"
+  errors:
+    not_signed_in: Nejdřív se přihlaš.
+    access_denied: Tam nesmíš.
+  forum:
+    header: "Zobrazuji %{title}"
+    forums: Fóra
+    new: Vytváříme nové fórum
+    edit: "Upravit %{title}"
+    topics_count:
+      zero: 0 témat
+      one: 1 téma
+      few: "%{count} témata"
+      other: "%{count} témat"
+    posts_count:
+      zero: 0 komentářů
+      one: 1 komentář
+      few: "%{count} komentáře"
+      other: "%{count} komentářů"
+    moderator_tools: "Moderátorské nástroje"
+  forums:
+    index:
+      title: Fóra
+      forum: Fórum
+      views: Zobrazení
+      last_post: 'Naposledy:'
+      none: Nic
+  topic:
+    headings:
+      topic: Téma
+      latest: Naposledy
+      posts: Komentáře
+      views: Zobrazení
     moderation:
-      title: "Moderování fóra %{forum}"
+      success: Vybrané fórum jsme moderovali.
+      no_option_selected: Nevybrals žádnou možnost.
+    received_reply: Téma, k jehož odběru ses přihlásil(a), má nové komentáře.
+    reply: Odpovědět
+    quote: Citovat
+    delete: Smazat
+    created: Vytvořili jsme to pro tebe.
+    new: Vytváříme
+    edit: Upravujeme
+    not_created: Tohle téma nejde vytvořit.
+    deleted: Smazali jsme to.
+    cannot_delete: Tohle téma nejde smazat.
+    updated: Upravili jsme to.
+    not_updated: Tohle téma nejde upravit.
+    subscribed: K odběru tohohle tématu se nejde přihlásit.
+    unsubscribed: Odhlásili jsme tě z odběru tohohle tématu.
+    none: Tady nic není.
+    links:
+      new: Nové téma
+      back_to_topics: Zpátky na témata
+      edit: Upravit téma
+    not_found: Tohle téma tu není.
+    hidden:
+      'true': Tohle téma je schované.
+      'false': Tohle téma je vidět.
+    locked:
+      'true': Tohle téma je zamčené.
+      'false': Tohle téma je odemčené.
+    pinned:
+      'true': Tohle téma je připnuté.
+      'false': Tohle téma neni připnuté.
+  topics:
+    show:
+      reply: Odpověď
+      delete: Smazat
+      delete_confirmation: Opravdu smazat?
+      subscribe: Odebírat
+      unsubscribe: Přestat odebírat
+      reply_to_topic: Odpovědět na téma
+      pending_review: Tohle téma aktuálně čeká na schválení. Než se tak stane, uvidí ho jen moderátoři a autor.
+      hide:
+        'true': Zobrazit
+        'false': Schovat
+      lock:
+        'true': Odemknout
+        'false': Zamknout
+      pin:
+        'true': Odepnout
+        'false': Připnout
+  post:
+    buttons:
+      reply: Odpověděť
+      edit: Upravit
+    created: Tvoji odpověď jsme publikovali
+    new: Odpovědět na
+    edit: Upravit
+    not_created: Tvůj komentář jsme nemohli publikovat.
+    not_created_topic_locked: Zamčené téma nejde komentovat.
+    edited: Upravili jsme tvůj komentář.
+    not_edited: Tvůj komentář nejde upravit.
+    deleted: Smazali jsme tvůj komentář.
+    deleted_with_topic: Smazali jsme komentáře pod tématem. A téma jsme taky smazali.
+    cannot_delete: Tenhle komentář nejde smazat.
+    in_reply_to: V odpovědi na
+  posts:
+    moderation:
+      moderate: Moderovat
+      approve: Schválit
+      spam: Spam
+      delete_confirmation: Opravdu smazat?
+      success: Tento komentář jsme moderovali.
+    post:
+      pending_review: Tento komentář aktuálně čeká na schválení. Než se tak stane, uvidí ho jen jeho autor a moderátor.
+  moderation:
+    title: "Moderování fóra %{forum}"
   helpers:
     submit:
       forum:
