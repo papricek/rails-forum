@@ -13,15 +13,8 @@ RailsForum::Application.routes.draw do
     end
   end
 
-  resources :topics, :only => [:new, :create, :index, :show, :destroy] do
-    resources :posts
-  end
-
-  get 'forums/:forum_id/moderation', :to => "moderation#index", :as => :forum_moderator_tools
-  # For mass moderation of posts
-  put 'forums/:forum_id/moderate/posts', :to => "moderation#posts", :as => :forum_moderate_posts
-  # Moderation of a single topic
-  put 'forums/:forum_id/topics/:topic_id/moderate', :to => "moderation#topic", :as => :moderate_forum_topic
+  match "/:forum_id/:id" => "topics#show", via: :get, as: 'forum_topic'
+  match "/:id" => "forums#show", via: :get, as: 'forum'
 
   resources :categories, :only => [:index, :show]
 

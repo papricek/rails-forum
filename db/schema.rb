@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20130203225225) do
     t.boolean  "locked",       :default => false,            :null => false
     t.boolean  "pinned",       :default => false
     t.boolean  "hidden",       :default => false
-    t.datetime "last_post_at"
+      t.datetime "last_post_at"
     t.string   "state",        :default => "pending_review"
     t.integer  "views_count",  :default => 0
     t.string   "slug"

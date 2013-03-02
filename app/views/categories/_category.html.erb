@@ -13,7 +13,7 @@
     <td colspan="2">
       <% forum.topics.last(3).each do |topic| %>
 
-        <h3><%= link_to topic.subject, topic_path(topic) %></h3>
+        <h3><%= link_to topic.subject, forum_topic_path(topic.forum, topic) %></h3>
 
         <p>
           <span class="started-by">
